@@ -29,7 +29,7 @@ public class AnalisadorLexico {
 
     public  ArrayList<String> retornaExpressoes() {
         //[\r]|[\n]
-        String regex = "\"([^\"]+)\"|(==)|\\d+(\\.\\d+)?|([<][=])|([>][=])|([!][=])|[+\\-*/()=!<>;{}.,]|([a-z]|[A-Z])+([A-Z]+)?([a-z]|[A-Z]|[0-9])*|\\S+[^;]";
+        String regex = "\"([^\"]+)\"|(==)|\\d+(\\.\\d+)?|([<][=])|([>][=])|([!][=])|[+\\-*/()=!<>;{}.,]|([a-z]|[A-Z])+([A-Z]+)?([a-z]|[A-Z]|[0-9])*|\\S+[^;]|[^\\s]+";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(this.codigo);
 

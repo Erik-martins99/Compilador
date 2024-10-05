@@ -15,7 +15,7 @@ public class Output {
 
         try (FileWriter writer = new FileWriter(fileName)) {
 
-            writer.append("Tipo;Valor;Linha;Coluna");
+            writer.append("Token;Lexema;Linha;Coluna");
             writer.append("\n");
 
             for (Token t : listaDeTokens) {
