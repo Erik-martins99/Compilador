@@ -1,24 +1,33 @@
-dungeon pessoa () {
-	skill Knight p1 = true;
-	skill Paladin	p2 = (3 + 4 /5 * 8);
-	skill Druid p3 = 10.11;
-	skill Sorcer p4 = "false";
+dungeon Guerreiro {
+    skill Paladin vida = 100;
+    skill Druid ataque = 20.5;
+    skill Druid defesa = 15.0;
+}
 
-	mission shedow mostra() {
-		invocation("Hello world!");
-	}
+dungeon Goblin {
+    skill Paladin vida = 60;
+    skill Paladin ataque = 10;
+    skill Druid defesa = 5.6;
+}
 
-	mission mage corre(Knight num) {
-		battle(num; num < 10; num++){
-			quest(num = 5) {
-				kill;
-			} peace {
-				rogue maze(false);
-			}
-		}
-	}
-} == space
-
-java -jar compilador.jar "camino do arquivo.txt"
-
-java -jar compilador.jar "caminho do código.txt"
+mission batalha(Guerreiro heroi, Goblin inimigo) {
+    maze (inimigo.vida > 0 AND heroi.vida > 0) {
+        Paladin dano = heroi.ataque - inimigo.defesa;
+        quest (dano > 0) {
+            inimigo.vida = inimigo.vida - dano;
+        } peace {
+            invocation("Ataque falhou");
+        }
+        dano = inimigo.ataque - heroi.defesa;
+        quest (dano > 0) {
+            heroi.vida = heroi.vida - dano;
+        } peace {
+            invocation("Inimigo falhou");
+        }
+    }
+    quest (heroi.vida > 0) {
+        invocation("Herói venceu");
+    } peace {
+        invocation("Goblin venceu");
+    }
+}

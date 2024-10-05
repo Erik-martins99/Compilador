@@ -19,9 +19,11 @@ public class TabelaSimbolos {
             t.PV.toString(),
             t.AC.toString(),
             t.FC.toString(),
-            t.OPATRIBUICAO.toString()},
+            t.OPATRIBUICAO.toString(),
+            t.P.toString(),
+            t.VR.toString()},
             {"+", "-", "*", "/", "(", ")", "==",
-            ">", "<", ">=", "<=", "!", "!=",";","{","}", "="}};
+            ">", "<", ">=", "<=", "!", "!=",";","{","}", "=", ".", ","}};
 
 
     public String[][] getTabelaDeSimbolos() {

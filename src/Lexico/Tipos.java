@@ -6,7 +6,7 @@ public enum Tipos {
 
     COND_AND, COND_OR,
 
-    AP, FP, AC, FC, PV,
+    AP, FP, AC, FC, PV, P, VR,
 
     NUM_INT, NUM_REAL,
 
