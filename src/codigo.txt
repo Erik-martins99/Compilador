@@ -6,7 +6,7 @@ dungeon Guerreiro {
 
 dungeon Goblin {
     skill Paladin vida = 60;
-    skill Paladin ataque = 10;
+    skill Druid ataque = 10;
     skill Druid defesa = 5.6;
 }
 
@@ -31,3 +31,4 @@ mission batalha(Guerreiro heroi, Goblin inimigo) {
         invocation("Goblin venceu");
     }
 }
+
